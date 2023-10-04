@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apartado 08</title>
+    </head>
+    <body style="text-align: center;">
+        <label for="colorfd">Elija el color del fondo: </label>
+        <input id="colorfd" name="colorfd" type="color">
+        <label for="fecha">Fecha: </label>
+        <input id="fecha" name="fecha" type="date">
+        <br><br>
+        <label for="fechayhoralocal">Fecha y hora local: </label>
+        <input id="fechayhoralocal" name="fechayhoralocal"
+        type="datetime-local">
+        <br><br>
+        <label for="hora">Hora: </label>
+        <input id="hora" name="hora" type="time">
+        <br><br>
+        <label for="mes">Mes: </label>
+        <input id="mes" name="mes" type="month">
+        <br><br>
+        <form action="gestiona.php" method="get">
+            <label for="dia">Elija el día de la semana:</label>
+            <input list="dias" name="dia" id="dia">
+            <datalist id="dias">
+            <option value="Lunes">
+            <option value="Martes">
+            <option value="Miércoles">
+            <option value="Jueves">
+            <option value="Viernes">
+            <option value="Sábado">
+            <option value="Domingo">
+            </datalist>
+            <input type="submit">
+        </form>
+        <hr>
+        <label for="rango">Valores</label>
+        <input type="range" min="0" max="20" step="2" name="rango" id="rango">
+        <input type="number" id="numero" name="numero">
+        <script>
+            const rango = document.getElementById("rango")
+            const numero = document.getElementById("numero")
+            rango.onchange = function(){
+            numero.value = rango.value;
+            }
+        </script>
+        <hr>
+        <form action="gestiona_datos.php">
+            <label for="dni">Código del país:</label>
+            <input type="text" id="dni" name="dni" pattern="(([X-Z]{1})([-]?)(\d{7})([-
+            ]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))">
+            <br>
+            <br>
+            <input type="submit">
+        </form>
+        <hr>
+        <label for="text">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre aquí">
+        <br><br>
+        <label for="text">Apellidos: </label>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos aquí">
+        <hr>
+        <form action="cambia.php" method="post" name="login">
+            <label for="usuario">Usuario: </label> <input type="text" name="usuario" id="usuario" required>
+            <br><br>
+            <label for="clave">Clave: </label><input type="password" name="clave" id="clave" required>
+            <br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
