@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Formulario</title>
+        </head>
+        <body style="background-color: pink;">              
+            <form style="border: 5px solid green; background-color: white;">
+            <fieldset>
+            <legend>Datos personales</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <td><label for="Apellidos">Apellidos</label>
+                        </td>
+                        <td><label for="Nombre">Nombre</td>
+                        <td><label for="Dni">DNI</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input id="apellido" name="apellido" type="text"></td>
+                        <td><input id="Nombre" name="Nombre" type="text"></td>
+                        <td><input type="text" id="dni" name="dni" pattern="(([X-Z]{1})([-]?)(\d{7})([-
+                            ]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))" title="Debes incluir un DNI correcto
+                            con 9 números y la letra en mayúscula">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Nacido/a">Nacido/a en:</label></td>
+                        <td style="text-align: center;"><label for="Provincia">Província</label></td>
+                        <td><label for="Fechanacim">Fecha nacimiento(dd/mm/aaaa)</label></td>
+                    </tr>
+                    <tr>
+                        <td><input id="nacimiento" name="nacimiento" type="text"></td>
+                        <td style="text-align: center;">
+                            <select required name="provincia1" id="provincia1" class="form-control">
+                            <option value="Badajoz">Badajoz</option>
+                            <option value="Caceres">Caceres</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Barcelona">Barcelona</option>
+                            <option value="Sevilla">Sevilla</option>
+                            <option value="Jaén">Jaén</option>
+                            </select>
+                        </td>
+                        <td><input id="nacimiento" name="nacimiento" type="date"></td>
+                    </tr>
+                    <tr>
+                    <td><label for="Domicilio">Domicilio (Calle, plaza y número)</label></td>  
+                    <td></td>
+                    <td><label for="Codigo postal">Código postal</label></td>  
+                    </tr>
+                    <tr>
+                        <td colspan="2";><input id="Domicilio" name="Domicilio" type="text" size="40"></td>
+                        <td><input type="text" id="cp" name="cp" pattern="/^(?:0[1-
+                            9]|[1-4]\d|5[0-2])\d{3}$/" title="Debes incluir una
+                            Código postal correcto" placeholder="Incluye los 5
+                            número">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Localidad">Localidad</label></td>
+                        <td><label for="Provincia">Provincia</label></td>
+                        <td><label for="Telefono">Telefono</label></td>
+                    </tr>
+                    <tr>
+                        <td><input id="Localidad" name="Domicilio" type="text"></td>
+                        <td>
+                            <select required name="provincia2" id="provincia2" class="form-control">
+                                <option value="Badajoz">Badajoz</option>
+                                <option value="Caceres">Caceres</option>
+                                <option value="Madrid">Madrid</option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="Sevilla">Sevilla</option>
+                                <option value="Jaén">Jaén</option>
+                            </select>
+                        </td>
+                        <td>
+                            <form name="ejemplo1" action="15-html5-tel-input-demo2.php" method="POST">
+                            <input type="tel" name="telefono" pattern="[0-9]{9}">       
+                        </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Solicitud</legend>
+            <p>El/La que suscribe desea ser admitido en este centro para cursar el ciclo formativo de grado superior</p>
+            <label for="Cicloformatvo">Ciclo formativo</label>
+            <select name="Ciclo formativo" id="">
+                <option value="ASIR">Administacion de Sistemas Informáticos en Red</option>
+                <option value="DAW">Desarrollo de Aplicaciones Web</option>
+                <option value="DAM">Desarrollo de aplicaciones Multiplataforma</option>
+            <select>
+            <p>En caso de no ser admitido/a solicita la admision por orden de preferencia los siguientes:</p>
+            <table>
+                <thead>
+                    <th>Ciclos formativos</th>
+                    <th>Centros</th>
+                    <th>Localidad</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input id="ciclos"  name="ciclos" type="text"></td>
+                        <td><input id="centros"  name="centros" type="text"></td>
+                        <td><input id="localidad"  name="localidad" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input id="ciclos"  name="ciclos" type="text"></td>
+                        <td><input id="centros"  name="centros" type="text"></td>
+                        <td><input id="localidad"  name="localidad" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input id="ciclos"  name="ciclos" type="text"></td>
+                        <td><input id="centros"  name="centros" type="text"></td>
+                        <td><input id="localidad"  name="localidad" type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <label for="Modaliadespec">Modalidad de horario especial (marque)</label>
+            <input type="checkbox" name="horaespec" id="horaespec">
+        </fieldset>
+        <fieldset>
+            <legend>Documentación presentada</legend>
+            <table>
+                <tr>
+                    <td><input type="checkbox" name="fotocdni" id="fotocdni">Fotocopia DNI</td>
+                    <td><input type="checkbox" name="certificadoac" id="certificadoac">Certificado academico</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="otrosdoc" id="otrosdoc">Otros documentos (especifique)
+                    <input id name="otrosdocbox"  type="text">
+                    </td>
+                </tr>
+            </table>
+            <center><input type="submit"></center>
+        </fieldset>
+        <script>
+            const rango = document.getElementById("provincia1")
+            const numero = document.getElementById("provincia2")
+            rango.onchange = function(){
+            numero.value = rango.value;
+            }
+        </script>
+        </form>
+        </section>
+    </body>
+</html>
